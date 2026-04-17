@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Share API Example</title>
+</head>
+<body>
+
+<button onclick="shareContent()">Share</button>
+
+<script>
+function shareContent() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'My Website',
+      text: 'Check out this awesome site!',
+      url: 'https://example.com'
+    })
+    .then(() => console.log('Shared successfully'))
+    .catch((error) => console.log('Error sharing', error));
+  } else {
+    alert('Web Share API not supported in your browser');
+  }
+}
+</script>
+
+</body>
+</html>
